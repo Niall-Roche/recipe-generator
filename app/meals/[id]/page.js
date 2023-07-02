@@ -35,7 +35,7 @@ export default async function Page({params}) {
   }
 
   return (
-    <div>
+    <main>
       <div>{meal?.strMeal}</div>
       <div>
         <ul>
@@ -54,6 +54,6 @@ export default async function Page({params}) {
         !!meal?.strYoutube &&
         <YoutubePlayer title={meal?.strMeal} url={meal?.strYoutube} />
       }
-    </div>
+    </main>
   )
 }

@@ -5,7 +5,7 @@ const inter = Inter({subsets: ['latin']})
 
 export const metadata = {
   title: 'Recipe Generator',
-  description: 'Search by ingredients and view meals',
+  description: 'Search ingredients and view meals',
 }
 
 export default function RootLayout({children}) {
