@@ -1,9 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import BackToTopButton from '@/components/buttons/BackToTopButton'
 
 const List = ({items}) => {
   return (
-    <div className='container my-12 mx-auto px-4 md:px-12'>
+    <>
       <div className='flex flex-wrap -mx-1 lg:-mx-4'>
         {
           items?.map(({strIngredient}, i) => (
@@ -24,7 +25,8 @@ const List = ({items}) => {
           ))
         }
       </div>
-    </div>
+      <BackToTopButton />
+    </>
   )
 }
 

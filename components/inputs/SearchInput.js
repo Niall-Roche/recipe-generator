@@ -2,6 +2,7 @@
 
 import {useParams, useRouter} from 'next/navigation'
 import {useState} from 'react'
+import {FaMagnifyingGlass, FaXmark} from 'react-icons/fa6'
 
 const SearchInput = () => {
   const {push} = useRouter()
@@ -22,14 +23,23 @@ const SearchInput = () => {
   }
 
   return (
-    <div className='flex flex-nowrap'>
+    <div className='flex border-2 rounded'>
+      <div className='flex items-center justify-center px-4 border-r'>
+        <FaMagnifyingGlass />
+      </div>
       <input
         autoFocus
+        className='px-4 py-2 flex-1 focus:outline-none'
         placeholder='Search Ingredients...'
         onChange={searchText}
         value={text}
       />
-      <button onClick={clearSearch}>x</button>
+      <button
+        disabled={!text}
+        className={`px-3 ${!text ? 'opacity-30' : 'opacity-1'}`}
+        onClick={clearSearch}>
+        <FaXmark />
+      </button>
     </div>
   )
 }
