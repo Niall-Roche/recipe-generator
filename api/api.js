@@ -1,3 +1,5 @@
+import {MEALS_URL, RECIPES_URL} from '@/constants/urls'
+
 export async function fetchIngredients(query = '') {
   const res = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?i=list')
 
@@ -11,7 +13,7 @@ export async function fetchIngredients(query = '') {
   const data = respJson?.meals?.map(meal => ({
     title: meal?.strIngredient,
     imgUrl: `https://www.themealdb.com/images/ingredients/${meal?.strIngredient}-Small.png`,
-    to: `/recipes/${meal?.strIngredient}`,
+    to: `${RECIPES_URL}/${meal?.strIngredient}`,
     ...meal,
   }))
 
@@ -35,7 +37,7 @@ export async function fetchRecipes(slug = '') {
   return respJson?.meals?.map(meal => ({
     title: meal?.strMeal,
     imgUrl: meal?.strMealThumb,
-    to: `/meals/${meal?.idMeal}`,
+    to: `${MEALS_URL}/${meal?.idMeal}`,
     ...meal,
   }))
 }

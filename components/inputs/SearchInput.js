@@ -3,6 +3,7 @@
 import {useParams, useRouter} from 'next/navigation'
 import {useState} from 'react'
 import {FaMagnifyingGlass, FaXmark} from 'react-icons/fa6'
+import {SEARCH_URL} from '@/constants/urls'
 
 const SearchInput = () => {
   const {push} = useRouter()
@@ -14,7 +15,7 @@ const SearchInput = () => {
     const regex = /[^a-zA-Z]/g
     const text = e?.target?.value?.replace(regex, '')
     setText(text)
-    push(text.length > 0 ? `/search/${text}` : '/')
+    push(text.length > 0 ? `${SEARCH_URL}/${text}` : '/')
   }
 
   const clearSearch = () => {
