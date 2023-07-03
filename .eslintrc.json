@@ -41,7 +41,6 @@
     "no-trailing-spaces": "error",
     "object-curly-spacing": ["error", "never"],
     "react/jsx-closing-bracket-location": ["error", {"selfClosing": "line-aligned", "nonEmpty": "after-props"}],
-    "max-len": ["error", { "code": 120 }],
     "react/jsx-props-no-spreading": "off",
     "import/prefer-default-export": "off",
     "no-use-before-define": "off",

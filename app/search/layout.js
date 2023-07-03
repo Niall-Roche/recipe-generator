@@ -4,9 +4,7 @@ export default async function Layout({children}) {
   return (
     <main>
       <section>
-        {
-          <SearchInput />
-        }
+        <SearchInput />
       </section>
       <section>
         {children}

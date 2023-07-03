@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import List from '@/components/list/List'
 
 async function fetchIngredients(query) {
   const res = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?i=list')
@@ -18,17 +18,5 @@ export default async function Page({params}) {
   const slug = params?.slug
   const data = await fetchIngredients(slug)
 
-  return (
-    <div>
-      {
-        data?.map(({strIngredient}, i) => (
-          <div key={i}>
-            <Link href={`/recipes/${strIngredient}`}>
-              {strIngredient}
-            </Link>
-          </div>
-        ))
-      }
-    </div>
-  )
+  return <List items={data} />
 }
