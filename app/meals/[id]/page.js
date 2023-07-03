@@ -1,17 +1,5 @@
 import YoutubePlayer from '@/components/media/YoutubePlayer'
-
-async function fetchMealById(id) {
-  const res = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
-
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error('Failed to fetch data')
-  }
-
-  const respJson = await res?.json()
-  const meal = respJson?.meals[0]
-  return meal
-}
+import {fetchMealById} from '@/api/api'
 
 export default async function Page({params}) {
   const {id} = params

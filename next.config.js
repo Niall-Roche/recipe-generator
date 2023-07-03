@@ -6,7 +6,7 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'www.themealdb.com',
         port: '',
-        pathname: '/images/ingredients/**',
+        pathname: '/images/**',
       },
     ],
   },

@@ -32,7 +32,7 @@ const SearchInput = () => {
         className='px-4 py-2 flex-1 focus:outline-none'
         placeholder='Search Ingredients...'
         onChange={searchText}
-        value={text}
+        value={text || ''}
       />
       <button
         disabled={!text}
