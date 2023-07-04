@@ -18,9 +18,10 @@ export async function fetchIngredients(query = '') {
     ...meal,
   }))
 
+  // If there is a query filter the list based on this value
   return (
     !!query
-      ? data?.filter(({strIngredient}) => strIngredient?.toLowerCase()?.includes(decodeURIComponent(query)))
+      ? data?.filter(({strIngredient}) => strIngredient?.toLowerCase()?.includes(decodeURIComponent(query)?.toLowerCase()))
       : data
   )
 }
