@@ -1,14 +1,5 @@
-import SearchInput from '@/components/inputs/SearchInput'
+import SearchLayout from '@/components/layouts/SearchLayout'
 
 export default async function Layout({children}) {
-  return (
-    <main>
-      <section>
-        <SearchInput />
-      </section>
-      <section>
-        {children}
-      </section>
-    </main>
-  )
+  return <SearchLayout>{children}</SearchLayout>
 }
