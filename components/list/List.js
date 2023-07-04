@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from '@/components/image/Image'
 import Link from 'next/link'
 import BackToTopButton from '@/components/buttons/BackToTopButton'
 
