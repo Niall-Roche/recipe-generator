@@ -36,6 +36,7 @@ const SearchInput = () => {
         value={text || ''}
       />
       <button
+        id='clear-search'
         disabled={!text}
         className={`px-3 ${!text ? 'opacity-30' : 'opacity-1'}`}
         onClick={clearSearch}>

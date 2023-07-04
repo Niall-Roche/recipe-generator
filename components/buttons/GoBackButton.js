@@ -7,7 +7,7 @@ const GoBackButton = () => {
   const {back} = useRouter()
 
   return (
-    <button onClick={back}><FaArrowLeftLong className='h-7 w-7 me-2' /></button>
+    <button id='back-button' className='me-2' onClick={back}><FaArrowLeftLong className='h-7 w-7 transition transform hover:scale-110' /></button>
   )
 }
 

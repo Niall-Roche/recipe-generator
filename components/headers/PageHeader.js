@@ -31,7 +31,7 @@ const PageHeader = () => {
   }, [id, pathname, slug])
 
   return (
-    <div className='font-thin text-2xl'>{message}<span className='font-bold ms-2'>{detail}</span></div>
+    <div id='page-header' className='font-thin text-2xl'>{message}<span className='font-bold ms-2'>{detail}</span></div>
   )
 }
 

@@ -20,7 +20,7 @@ const List = props => {
                 <Link href={to}>
                   <h3 className='text-center font-bold py-2'>{title}</h3>
                   <Image
-                    className={`block h-auto w-auto m-auto p-3 group-hover:scale-105 transition-transform ${noTilt ? '' : 'group-hover:rotate-6'}`}
+                    className={`block h-auto w-auto m-auto p-3 transition transform duration-300 ease-in-out group-hover:scale-105 ${noTilt ? '' : 'group-hover:rotate-6'}`}
                     src={imgUrl}
                     height={imgSize}
                     width={imgSize}
