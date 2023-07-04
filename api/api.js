@@ -19,7 +19,7 @@ export async function fetchIngredients(query = '') {
 
   return (
     !!query
-      ? data?.filter(({strIngredient}) => strIngredient?.toLowerCase()?.includes(query))
+      ? data?.filter(({strIngredient}) => strIngredient?.toLowerCase()?.includes(decodeURIComponent(query)))
       : data
   )
 }

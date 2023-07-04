@@ -1,6 +1,6 @@
 import SearchInput from '@/components/inputs/SearchInput'
-import List from '@/components/list/List'
 import {fetchIngredients} from '@/api/api'
+import IngredientList from '@/components/list/IngredientList'
 
 export default async function Page() {
   const data = await fetchIngredients()
@@ -11,7 +11,7 @@ export default async function Page() {
         <SearchInput />
       </section>
       <section>
-        <List items={data} />
+        <IngredientList items={data} />
       </section>
     </main>
   )

@@ -1,6 +1,7 @@
 'use client'
 
 import {useState} from 'react'
+import {v4} from 'uuid'
 
 const INGREDIENT_KEY = 'ingredient'
 const INSTRUCTIONS_KEY = 'instructions'
@@ -15,7 +16,7 @@ const RecipeDetails = ({meal}) => {
       const measure = meal[`strMeasure${i}`]
 
       if (!!ingredient?.trim() && !!measure?.trim()) ingredients.push(
-        <li className='flex'>
+        <li key={v4()} className='flex'>
           <div className='me-1 text-xl font-bold'>{ingredient}:</div>
           <div className='text-xl font-light'>{measure}</div>
         </li>
@@ -49,7 +50,7 @@ const RecipeDetails = ({meal}) => {
               </ul>
             )
             : (
-              <div className='text-xl font-light'>
+              <div className='text-xl font-light whitespace-pre-wrap'>
                 {
                   meal?.strInstructions
                 }

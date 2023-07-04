@@ -1,6 +1,6 @@
-import List from '@/components/list/List'
 import {fetchIngredients} from '@/api/api'
 import NoResults from '@/components/no-results/NoResults'
+import IngredientList from '@/components/list/IngredientList'
 
 export default async function Page({params}) {
   const slug = params?.slug
@@ -8,5 +8,5 @@ export default async function Page({params}) {
 
   if (!data || data?.length < 1) return <NoResults />
 
-  return <List items={data} />
+  return <IngredientList items={data} />
 }

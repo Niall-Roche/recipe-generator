@@ -12,7 +12,7 @@ const SearchInput = () => {
   const [text, setText] = useState(params?.slug)
 
   const searchText = e => {
-    const regex = /[^a-zA-Z]/g
+    const regex = /[^a-zA-Z\s]/g
     const text = e?.target?.value?.replace(regex, '')
     setText(text)
     push(text.length > 0 ? `${SEARCH_URL}/${text}` : '/')
