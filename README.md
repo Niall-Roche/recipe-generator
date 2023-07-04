@@ -56,3 +56,5 @@ https://react-icons.github.io/react-icons/
 https://github.com/tjallingt/react-youtube
 
 https://www.flaticon.com/free-icon/fork-and-knife-in-cross_45552
+
+https://enlear.academy/create-responsive-iframe-embed-in-a-react-way-f52075bf3b04

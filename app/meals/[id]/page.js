@@ -28,9 +28,15 @@ export default async function Page({params}) {
       <RecipeDetails meal={meal} />
       {
         !!meal?.strYoutube &&
-        <div>
+        <div className='max-w-screen-sm'>
           <div className='text-2xl font-thin mb-2'>Watch an Instructional Video</div>
-          <YoutubePlayer title={meal?.strMeal} url={meal?.strYoutube} />
+          <YoutubePlayer
+            className='relative overflow-hidden'
+            style={{paddingBottom: '56.25%'}}
+            iframeClassName='overflow-hidden border-none self-center absolute top-0 left-0 w-full h-full'
+            title={meal?.strMeal}
+            url={meal?.strYoutube}
+          />
         </div>
       }
     </main>
