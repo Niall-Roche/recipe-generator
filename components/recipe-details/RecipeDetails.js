@@ -14,7 +14,7 @@ const RecipeDetails = ({meal}) => {
       const ingredient = meal[`strIngredient${i}`]
       const measure = meal[`strMeasure${i}`]
 
-      if (!!ingredient && !!measure) ingredients.push(
+      if (!!ingredient?.trim() && !!measure?.trim()) ingredients.push(
         <li className='flex'>
           <div className='me-1 text-xl font-bold'>{ingredient}:</div>
           <div className='text-xl font-light'>{measure}</div>
