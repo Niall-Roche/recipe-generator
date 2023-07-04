@@ -38,7 +38,7 @@ You may also see any lint errors in the console.
 
 ### `yarn cypress`
 
-Launches the test runner and you can choose to run the e2e tested included in the /cypress directory
+Launches the test runner and you can choose to run the e2e tests included in the /cypress directory
 
 ## Notes
 
