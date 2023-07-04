@@ -29,11 +29,13 @@ const RecipeDetails = ({meal}) => {
     <div>
       <div className='flex flex-row my-3'>
         <button
+          id='ingredients-btn'
           onClick={() => setActiveKey(INGREDIENT_KEY)}
           className={`text-2xl p-2 me-2 border-b ${activeKey === INGREDIENT_KEY ? 'border-b-blue-500' : 'border-b-transparent'} transition-border duration-200`}>
           Ingredients
         </button>
         <button
+          id='instructions-btn'
           onClick={() => setActiveKey(INSTRUCTIONS_KEY)}
           className={`text-2xl p-2 border-b ${activeKey === INSTRUCTIONS_KEY ? 'border-b-blue-500' : 'border-b-transparent'} transition-border duration-200`}>
           Instructions
