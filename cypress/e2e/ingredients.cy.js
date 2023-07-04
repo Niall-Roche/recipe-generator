@@ -4,7 +4,7 @@ describe('Ingredients', () => {
     cy.visit('http://localhost:3000')
 
     // Grab the first link in the list
-    const ingredientLink = cy.get('a').first()
+    const ingredientLink = cy.get('a[id="app-link"]').first()
     ingredientLink.should('exist')
   })
 
@@ -19,7 +19,7 @@ describe('Ingredients', () => {
     input.type('pepper')
 
     // Grab the first link in the list
-    const ingredientLink = cy.get('a').first()
+    const ingredientLink = cy.get('a[id="app-link"]').first()
     ingredientLink.should('exist')
     ingredientLink.get('h3').first().contains('pepper', {matchCase: false})
   })
@@ -29,7 +29,7 @@ describe('Ingredients', () => {
     cy.visit('http://localhost:3000')
 
     // Grab the first link in the list
-    const ingredientLink = cy.get('a').first()
+    const ingredientLink = cy.get('a[id="app-link"]').first()
     ingredientLink.should('exist')
     ingredientLink.get('img').first().should('exist')
   })

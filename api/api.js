@@ -1,7 +1,8 @@
 import {MEALS_URL, RECIPES_URL} from '@/constants/urls'
+import {NEXT_PUBLIC_API_KEY, NEXT_PUBLIC_BASE_API_URL} from '@/constants/env'
 
 export async function fetchIngredients(query = '') {
-  const res = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?i=list')
+  const res = await fetch(`${NEXT_PUBLIC_BASE_API_URL}/api/json/v1/${NEXT_PUBLIC_API_KEY}/list.php?i=list`)
 
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
@@ -12,7 +13,7 @@ export async function fetchIngredients(query = '') {
   //Normalise the data for the list view
   const data = respJson?.meals?.map(meal => ({
     title: meal?.strIngredient,
-    imgUrl: `https://www.themealdb.com/images/ingredients/${meal?.strIngredient}-Small.png`,
+    imgUrl: `${NEXT_PUBLIC_BASE_API_URL}/images/ingredients/${meal?.strIngredient}-Small.png`,
     to: `${RECIPES_URL}/${meal?.strIngredient}`,
     ...meal,
   }))
@@ -25,7 +26,7 @@ export async function fetchIngredients(query = '') {
 }
 
 export async function fetchRecipes(slug = '') {
-  const res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${slug}`)
+  const res = await fetch(`${NEXT_PUBLIC_BASE_API_URL}/api/json/v1/${NEXT_PUBLIC_API_KEY}/filter.php?i=${slug}`)
 
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
@@ -43,7 +44,7 @@ export async function fetchRecipes(slug = '') {
 }
 
 export async function fetchMealById(id) {
-  const res = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
+  const res = await fetch(`${NEXT_PUBLIC_BASE_API_URL}/api/json/v1/${NEXT_PUBLIC_API_KEY}/lookup.php?i=${id}`)
 
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary

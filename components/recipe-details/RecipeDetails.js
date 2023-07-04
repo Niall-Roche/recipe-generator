@@ -43,14 +43,14 @@ const RecipeDetails = ({meal}) => {
         {
           activeKey === INGREDIENT_KEY
             ? (
-              <ul>
+              <ul id='ingredient-list'>
                 {
                   renderIngredients(meal)
                 }
               </ul>
             )
             : (
-              <div className='text-xl font-light whitespace-pre-wrap'>
+              <div id='meal-instructions' className='text-xl font-light whitespace-pre-wrap'>
                 {
                   meal?.strInstructions
                 }
